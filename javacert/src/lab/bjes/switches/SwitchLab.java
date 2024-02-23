@@ -43,6 +43,5 @@ public class SwitchLab {
 
             System.out.println("Second switch returned string : " + s);
         }
-
     }
 }

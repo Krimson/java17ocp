@@ -1,16 +1,20 @@
 package lab.bjes;
 
 import lab.bjes.arrays.ArrayLab;
+import lab.bjes.arrays.MultidimensionalArrayLab;
 import lab.bjes.atomic.AtomicIntegerLab;
 import lab.bjes.exceptions.ExceptionLab;
+import lab.bjes.instance.InstanceOfLab;
 import lab.bjes.interfaces.DerivedClassAB;
 import lab.bjes.lambda.LambdaLab;
 import lab.bjes.misc.Misc;
 import lab.bjes.paths.PathLab;
 import lab.bjes.polymorphism.PolyDog;
+import lab.bjes.serialization.SerializationLab;
 import lab.bjes.streams.StreamLab;
 import lab.bjes.switches.SwitchLab;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 public class Main {
@@ -18,9 +22,8 @@ public class Main {
         boolean runAll = args == null || args.length == 0;
 
         // Streams
-        // + sum (doesnt exist in stream, but in int stream, via mapToInt)
         // collectors, summarizing int  etc
-
+        // parallel stream
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("stream"))) {
             StreamLab streamLab = new StreamLab();
         }
@@ -31,9 +34,8 @@ public class Main {
         }
 
         // Paths
-        // + get paths from string
-        // + subpath (test 4 q11)
-        // + get name
+        // + is valid, test 4 q 15
+        // + copy q40 test 5
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("path"))) {
             PathLab pathLab = new PathLab();
         }
@@ -46,7 +48,7 @@ public class Main {
         }
 
         // Interfaces
-        // add interfaces extending other interfaces & abstract classes
+        // add abstract classes + emplement or extend abstract class
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("interface"))) {
             DerivedClassAB derivedClassAB = new DerivedClassAB();
             derivedClassAB.methodA();
@@ -68,7 +70,6 @@ public class Main {
         }
 
 
-
         // Priority
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("prio"))) {
 
@@ -77,7 +78,12 @@ public class Main {
 
 
         // nested class
-        // matrix/table test4q14
+
+
+        // multidimensional array
+        if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("multi"))) {
+            MultidimensionalArrayLab multidimensionalArrayLab = new MultidimensionalArrayLab();
+        }
 
 
         // loops + do; while
@@ -97,11 +103,14 @@ public class Main {
             SwitchLab switchLab = new SwitchLab();
         }
 
-
-        // Enum
-        if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("enum"))) {
-
+        // Instanceof
+        if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("instanceof"))) {
+            InstanceOfLab instanceOfLab = new InstanceOfLab();
         }
+
+        // Strings !str.isBlank() if contains whitespez
+        // + string builder
+
 
         // Collections
         // compareTo with null as second param
@@ -115,15 +124,24 @@ public class Main {
 
         // functional interface + supplier/function
 
-        // ArrayDequeue remove() <-- important (can act as both queue and stack )
+        // ArrayDequeue remove() <-- important (can act as both queue and stack)
 
-        // intstream
+        if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("serialize"))) {
+            try {
+                SerializationLab serializationLab = new SerializationLab();
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+                System.out.println("Exception caught in SerializationLab...");
+            }
 
-        // serializable
+        }
 
         // observable
 
         // module info
+
+        // Local date time bs
+        // period between + duration between
 
         // concurrency
 

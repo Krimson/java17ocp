@@ -1,4 +1,4 @@
 package lab.bjes.interfaces;
 
-public interface InterfaceC extends InterfaceA{
+public abstract interface InterfaceC extends InterfaceA{ // OK, but abstract redundant
 }

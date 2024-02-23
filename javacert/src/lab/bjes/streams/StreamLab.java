@@ -1,17 +1,17 @@
 package lab.bjes.streams;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StreamLab {
-
     public StreamLab() {
         streamTerminalOperation();
         streamInstance();
         streamCollections();
+        intStreams();
+        streamReduce();
     }
 
     private void streamTerminalOperation() {
@@ -52,12 +52,43 @@ public class StreamLab {
         System.out.println("Avarage value: " + avgValue);
     }
 
+    private void intStreams() {
+        System.out.println("--- Stream - IntStream");
+        System.out.println("Creating IntStream with IntStream.range(4, 7)");
+        IntStream intStream = IntStream.range(4, 7);
+        OptionalInt optionalInt = intStream.sorted().findFirst();
+        System.out.println("Found first element: " + optionalInt);
+
+        System.out.println("Converting IntStream to Stream<Integer> using IntStream.range(4,7).boxed()");
+        Stream<Integer> iStream = IntStream.range(4,7).boxed();
+        iStream.sorted().findFirst();
+        System.out.println("Found first element: " + optionalInt);
+
+        System.out.println("--- Stream - Intstream sums");
+        System.out.println("Sums: Checking value of IntStream.of(3,7,10).sum(): " + IntStream.of(3,7,10).sum());
+        System.out.println("Sums: Checking value of Stream.of(2,5,6).mapToInt(x -> x*2).sum(): " + Stream.of(2,5,6).mapToInt(x -> x*2).sum());
+    }
+
     private void streamReduce() {
         System.out.println("--- Stream - Reduce");
+
+        System.out.println("Using reduce to calculate sum with different identity (initial value) parameter...");
+        int sum = Stream.of( 1, 2, 3).reduce(0, (Integer a, Integer b) -> a+b);
+        System.out.println("Stream.of( 1, 2, 3).reduce(0, (Integer a, Integer b) -> a+b): " + sum);
+
+        sum = Stream.of( 1, 2, 3).reduce(10, (Integer a, Integer b) -> a+b);
+        System.out.println("Stream.of( 1, 2, 3).reduce(10, (Integer a, Integer b) -> a+b): " + sum);
+
+        double avarage = Stream.of(3.0,5.5).reduce(2.3, (a, b) -> a + b);
+
+        String[] arr = new String[] {"abc", "123", "hej"};
+        String result = Arrays.stream(arr).reduce("init", (String subtotal, String element) -> subtotal + "_" + element);
+        System.out.println("String[] arr = new String[] {\"abc\", \"123\", \"hej\"}");
+        System.out.println("Arrays.stream(arr).reduce(\"init\", (String subtotal, String element) -> subtotal + \"_\" + element)");
+        System.out.println("Result: " + result);
     }
 
     private void streamParallel() {
         System.out.println("--- Stream - Parallel");
-
     }
 }
