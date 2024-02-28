@@ -13,6 +13,7 @@ import lab.bjes.polymorphism.PolyDog;
 import lab.bjes.serialization.SerializationLab;
 import lab.bjes.streams.StreamLab;
 import lab.bjes.switches.SwitchLab;
+import lab.bjes.time.TimeLab;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -29,6 +30,7 @@ public class Main {
         }
 
         // Arrays
+        // + add Arrays.compare, Arrays.mismatch
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("array"))) {
             ArrayLab arrayLab = new ArrayLab();
         }
@@ -48,7 +50,6 @@ public class Main {
         }
 
         // Interfaces
-        // add abstract classes + emplement or extend abstract class
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("interface"))) {
             DerivedClassAB derivedClassAB = new DerivedClassAB();
             derivedClassAB.methodA();
@@ -140,8 +141,10 @@ public class Main {
 
         // module info
 
-        // Local date time bs
-        // period between + duration between
+        // Time (LocalDateTime, Period, Duration etc)
+        if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("time"))) {
+            TimeLab timeLab = new TimeLab();
+        }
 
         // concurrency
 
