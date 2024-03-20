@@ -79,7 +79,7 @@ public class StreamLab {
         sum = Stream.of( 1, 2, 3).reduce(10, (Integer a, Integer b) -> a+b);
         System.out.println("Stream.of( 1, 2, 3).reduce(10, (Integer a, Integer b) -> a+b): " + sum);
 
-        double avarage = Stream.of(3.0,5.5).reduce(2.3, (a, b) -> a + b);
+        //double avarage = Stream.of(3.0,5.5).reduce(2.3, (a, b) -> a + b); ?
 
         String[] arr = new String[] {"abc", "123", "hej"};
         String result = Arrays.stream(arr).reduce("init", (String subtotal, String element) -> subtotal + "_" + element);

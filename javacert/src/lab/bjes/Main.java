@@ -3,17 +3,21 @@ package lab.bjes;
 import lab.bjes.arrays.ArrayLab;
 import lab.bjes.arrays.MultidimensionalArrayLab;
 import lab.bjes.atomic.AtomicIntegerLab;
+import lab.bjes.enums.EnumOrderLab;
 import lab.bjes.exceptions.ExceptionLab;
+import lab.bjes.floats.FloatLab;
 import lab.bjes.instance.InstanceOfLab;
 import lab.bjes.interfaces.DerivedClassAB;
 import lab.bjes.lambda.LambdaLab;
 import lab.bjes.misc.Misc;
 import lab.bjes.paths.PathLab;
 import lab.bjes.polymorphism.PolyDog;
+import lab.bjes.records.RecordLab;
 import lab.bjes.serialization.SerializationLab;
 import lab.bjes.streams.StreamLab;
 import lab.bjes.switches.SwitchLab;
 import lab.bjes.time.TimeLab;
+import lab.bjes.varargs.VarargsLab;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -70,6 +74,10 @@ public class Main {
             LambdaLab lambdaLab = new LambdaLab();
         }
 
+        // Float
+        if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("float"))) {
+            FloatLab floatLab = new FloatLab();
+        }
 
         // Priority
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("prio"))) {
@@ -86,12 +94,17 @@ public class Main {
             MultidimensionalArrayLab multidimensionalArrayLab = new MultidimensionalArrayLab();
         }
 
+        // Varargs
+        if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("varargs"))) {
+            VarargsLab varargsLab = new VarargsLab();
+        }
+
 
         // loops + do; while
 
         // Records
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("record"))) {
-
+            RecordLab recordLab = new RecordLab();
         }
 
         // String (stringbuild, append, substring)
@@ -107,6 +120,11 @@ public class Main {
         // Instanceof
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("instanceof"))) {
             InstanceOfLab instanceOfLab = new InstanceOfLab();
+        }
+
+        // Enums
+        if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("enums"))) {
+            EnumOrderLab enumOrderLab = new EnumOrderLab();
         }
 
         // Strings !str.isBlank() if contains whitespez

@@ -1,9 +1,6 @@
 package lab.bjes.time;
 
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.Period;
+import java.time.*;
 import java.time.format.DateTimeParseException;
 
 public class TimeLab {
@@ -74,8 +71,17 @@ public class TimeLab {
         System.out.println("--- Durations");
         System.out.println("While Periods uses date-based values. Duration uses time-based values");
         System.out.println("When using Durations, a day is always 24 hours and will never take DST into account. ");
+        System.out.println("Durations looks like this: DT30H30M, ie no days");
 
-        // 
-        Duration.ofHours(10);
+        Duration d = Duration.between(LocalDateTime.of(2021, Month.JANUARY, 1, 15, 12, 1), LocalDateTime.of(2022, Month.APRIL, 15, 16, 50, 30));
+        System.out.println("Duration.between(LocalDateTime.of(2021, Month.JANUARY, 1, 15, 12, 1), LocalDateTime.of(2022, Month.APRIL, 15, 16, 50, 30): " + d);
+        // PT11257H38M29S
+
+        d = Duration.between(LocalDateTime.of(2023, Month.JULY, 15, 15, 30), LocalDateTime.of(2023, Month.JANUARY, 15, 15, 30));
+        System.out.println("Duration.between(LocalDateTime.of(2023, Month.JULY, 15, 15, 30), LocalDateTime.of(2023, Month.JANUARY, 15, 15, 30): " + d);
+        // PT-4344H
+
+        // System.out.println(Duration.between(LocalDate.now(), LocalDate.of(2001, 12, 3))); needs time, not only dates
+        System.out.println("LocalDateTime.of(2023, Month.JANUARY, 15, 15, 30, 15), LocalDateTime.now(): " + d);
     }
 }
