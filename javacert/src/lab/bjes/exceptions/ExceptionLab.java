@@ -11,8 +11,9 @@ class NestedException {
 public class ExceptionLab {
     public ExceptionLab() {
         mainException();
+        customException();
     }
-    public void mainException() {
+    private void mainException() {
         System.out.println("--- Exceptions - Throws");
         NestedException nestedException = new NestedException();
 
@@ -30,6 +31,16 @@ public class ExceptionLab {
             catch (IOException ioe) { // but this is
                 System.out.println("Caught IOException :O");
             }
+        }
+    }
+    private void customException() {
+        System.out.println("--- Exceptions - Custom Exceptions");
+        try {
+            throw new CustomException("Custom error occurred");
+        }
+        catch (CustomException ce) {
+            System.out.println("Custom exception caught. ");
+            //ce.printStackTrace();
         }
     }
 }

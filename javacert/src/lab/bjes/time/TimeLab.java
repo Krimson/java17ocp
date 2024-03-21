@@ -82,6 +82,15 @@ public class TimeLab {
         // PT-4344H
 
         // System.out.println(Duration.between(LocalDate.now(), LocalDate.of(2001, 12, 3))); needs time, not only dates
-        System.out.println("LocalDateTime.of(2023, Month.JANUARY, 15, 15, 30, 15), LocalDateTime.now(): " + d);
+
+        System.out.println("Duration.ofDays(2): " + Duration.ofDays(2)); // PT48H
+        System.out.println("Duration.ofMinutes(185): " + Duration.ofMinutes(185)); // PT3H5M
+        System.out.println("Duration.ofMinutes(-175): " + Duration.ofMinutes(-175)); // PT-2H-55M
+        System.out.println("Duration.ofMinutes(-185): " + Duration.ofMinutes(-185)); // PT-3H-5M
+        System.out.println("Duration.ofSeconds(5): " + Duration.ofSeconds(5)); // PT5S
+
+        System.out.println("Durations can also be created using only LocalTime: ");
+        d = Duration.between(LocalTime.parse("15:00:00"), LocalTime.of(17, 30, 0)); // PT2H30M
+        System.out.println("Duration.between(LocalTime.parse(\"15:00:00\"), LocalTime.of(17, 30, 0): " + d);
     }
 }

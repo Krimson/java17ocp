@@ -12,5 +12,5 @@ sealed class Document implements Readable permits Book, Book2{ }
 non-sealed class Book extends Document { }
 sealed class Book2 extends Document permits Page {}
 non-sealed class Page extends Book2 {}
-final class Sentence extends Page {}
+final class Sentence extends Page {} // Since Page is a non-sealed class instead of final, it can be further extended
 final class Journal extends Book{ }

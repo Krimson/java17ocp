@@ -12,6 +12,7 @@ public class Misc {
         encapsulation();
         cohesion();
         moduleInfo();
+        javaCommand();
     }
 
     private void platformIndependent() {
@@ -57,7 +58,20 @@ public class Misc {
         System.out.println("4) A module doesn't depend or belong to any package. Packages belong to a module. ");
     }
 
-    private void javaCommand() {}
+    private void javaCommand() {
+        System.out.println("--- Misc - Java command: classpath vs modulepath");
+        System.out.println("cp: The classpath (-cp, --class-path, -classpath) is an env variable that tells the JVM where to find classes during runtime");
+        System.out.println("cp: It consists of a collection of JAR & ZIP files that contain compiles Java bytecode (.class files) and other associated resources (conf- / property files)");
+        System.out.println("cp: examples: ");
+        System.out.println("javac -cp \"lib/mylibrary.jar\" MyProgram.java");
+        System.out.println("java -cp \"lib/mylibrary.jar:.\" MyProgram");
+
+        System.out.println("mp: https://www.baeldung.com/java-classpath-vs-modulepath");
+        System.out.println("mp: The modulepath is a collection of directories, JAR files and modules that contains compiled module files (.mod files) and their associated deps");
+        System.out.println();
+        System.out.println();
+        System.out.println();
+    }
 
     private void jdepsCommand() {
 
@@ -67,5 +81,11 @@ public class Misc {
 
     }
 
-    // callable + runnable, test5q39
+    private void javaThreads() {
+        System.out.println("--- Misc - Threads");
+        System.out.println("In a basic Java program, there is one primary thread. It's runnable calls the main() method, the thread ends when the method terminates. ");
+        System.out.println("The same goes for Threads created in Runnables, those threads also exits when the code has finished executing.");
+        System.out.println("The JVM exits when there are no more threads.");
+        System.out.println("In a Java Swing application, Swing has its own thread to keep the application running.");
+    }
 }

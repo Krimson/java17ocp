@@ -6,6 +6,7 @@ import lab.bjes.atomic.AtomicIntegerLab;
 import lab.bjes.enums.EnumOrderLab;
 import lab.bjes.exceptions.ExceptionLab;
 import lab.bjes.floats.FloatLab;
+import lab.bjes.functional.interfaces.FiLab;
 import lab.bjes.instance.InstanceOfLab;
 import lab.bjes.interfaces.DerivedClassAB;
 import lab.bjes.lambda.LambdaLab;
@@ -15,6 +16,7 @@ import lab.bjes.polymorphism.PolyDog;
 import lab.bjes.records.RecordLab;
 import lab.bjes.serialization.SerializationLab;
 import lab.bjes.streams.StreamLab;
+import lab.bjes.strings.StringLab;
 import lab.bjes.switches.SwitchLab;
 import lab.bjes.time.TimeLab;
 import lab.bjes.varargs.VarargsLab;
@@ -107,12 +109,13 @@ public class Main {
             RecordLab recordLab = new RecordLab();
         }
 
-        // String (stringbuild, append, substring)
+        // Strings
+        // + isBlank()
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("string"))) {
-
+            StringLab stringLab = new StringLab();
         }
 
-        // Switch (test 3 q24)
+        // Switch
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("switch"))) {
             SwitchLab switchLab = new SwitchLab();
         }
@@ -126,10 +129,6 @@ public class Main {
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("enums"))) {
             EnumOrderLab enumOrderLab = new EnumOrderLab();
         }
-
-        // Strings !str.isBlank() if contains whitespez
-        // + string builder
-
 
         // Collections
         // compareTo with null as second param
@@ -155,7 +154,7 @@ public class Main {
 
         }
 
-        // observable
+        // observable fi?
 
         // module info
 
@@ -168,11 +167,12 @@ public class Main {
 
         // reflection
 
-        // time calulation, test 4 q5
-
         // RandomAccessFile, test 4 q6
 
-        // Futures (implements Callable t4q7)
+        // Functional Interfaces
+        if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("functional"))) {
+            FiLab fiLab = new FiLab();
+        }
 
         // Misc
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("misc"))) {
