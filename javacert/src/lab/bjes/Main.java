@@ -3,6 +3,7 @@ package lab.bjes;
 import lab.bjes.arrays.ArrayLab;
 import lab.bjes.arrays.MultidimensionalArrayLab;
 import lab.bjes.atomic.AtomicIntegerLab;
+import lab.bjes.collectors.CollectorsLab;
 import lab.bjes.enums.EnumOrderLab;
 import lab.bjes.exceptions.ExceptionLab;
 import lab.bjes.floats.FloatLab;
@@ -11,6 +12,7 @@ import lab.bjes.instance.InstanceOfLab;
 import lab.bjes.interfaces.DerivedClassAB;
 import lab.bjes.lambda.LambdaLab;
 import lab.bjes.misc.Misc;
+import lab.bjes.optionals.OptionalLab;
 import lab.bjes.paths.PathLab;
 import lab.bjes.polymorphism.PolyDog;
 import lab.bjes.records.RecordLab;
@@ -29,10 +31,15 @@ public class Main {
         boolean runAll = args == null || args.length == 0;
 
         // Streams
-        // collectors, summarizing int  etc
+        // summarizing int  etc
         // parallel stream
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("stream"))) {
             StreamLab streamLab = new StreamLab();
+        }
+
+        // Collectors
+        if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("collect"))) {
+            CollectorsLab collectorsLab = new CollectorsLab();
         }
 
         // Arrays
@@ -128,6 +135,11 @@ public class Main {
         // Enums
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("enums"))) {
             EnumOrderLab enumOrderLab = new EnumOrderLab();
+        }
+
+        // Optionals
+        if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("optional"))) {
+            OptionalLab optionalLab = new OptionalLab();
         }
 
         // Collections

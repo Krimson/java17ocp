@@ -12,6 +12,7 @@ public class ExceptionLab {
     public ExceptionLab() {
         mainException();
         customException();
+        finallyFlow();
     }
     private void mainException() {
         System.out.println("--- Exceptions - Throws");
@@ -42,6 +43,22 @@ public class ExceptionLab {
             System.out.println("Custom exception caught. ");
             //ce.printStackTrace();
         }
+    }
+
+    private void finallyFlow() {
+        System.out.println("--- Exceptions - Finally");
+        System.out.println("Finally block always runs after a try or catch has finished.");
+        try {
+            System.out.println("In try: return;");
+            return;
+        }
+        catch (Exception e) {
+            System.out.println("Caught exception");
+        }
+        finally {
+            System.out.println("Finally runs before return happens!");
+        }
+        System.out.println("Not reaching this");
     }
 }
 
