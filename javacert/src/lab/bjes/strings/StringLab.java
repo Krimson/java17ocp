@@ -5,6 +5,7 @@ public class StringLab {
         stringConcatenation();
         tripleQuotations();
         subStrings();
+        isBlank();
     }
 
     private void stringConcatenation() {
@@ -46,5 +47,17 @@ public class StringLab {
         System.out.println("Can also be done by only giving a start index. s.substring(4): " + s.substring(4)); // ple
 
         System.out.println("If substring is not in bounds within the String a StringIndexOutOfBoundsException will be thrown");
+    }
+
+    private void isBlank() {
+        System.out.println("--- Strings - isBlank() vs isEmpty()");
+        System.out.println("isBlank returns true if Strings contains only whitespaces. isEmpty returns true if the String is empty. ");
+        System.out.println("\"\".isBlank(): " + "".isBlank());
+        System.out.println("\" \".isBlank(): " + " ".isBlank());
+        System.out.println("\"\\t\\n\".isBlank(): " + "\t\n".isBlank());
+
+        System.out.println("\"\".isEmpty(): " + "".isEmpty());
+        System.out.println("\" \".isEmpty(): " + " ".isEmpty());
+        System.out.println("\"\\t\\n\".isEmpty(): " + "\t\n".isEmpty());
     }
 }

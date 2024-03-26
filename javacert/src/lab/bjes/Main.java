@@ -11,9 +11,11 @@ import lab.bjes.functional.interfaces.FiLab;
 import lab.bjes.instance.InstanceOfLab;
 import lab.bjes.interfaces.DerivedClassAB;
 import lab.bjes.lambda.LambdaLab;
+import lab.bjes.locale.LocaleLab;
 import lab.bjes.misc.Misc;
 import lab.bjes.optionals.OptionalLab;
 import lab.bjes.paths.PathLab;
+import lab.bjes.casting.CastingLab;
 import lab.bjes.polymorphism.PolyDog;
 import lab.bjes.records.RecordLab;
 import lab.bjes.serialization.SerializationLab;
@@ -60,6 +62,11 @@ public class Main {
             // Overloading: compile-time polymorphism / static polymorphism
             // Overriding: run-time polymorphism
             PolyDog polyDog = new PolyDog();
+        }
+
+        // Casting
+        if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("cast"))) {
+            CastingLab castingLab = new CastingLab();
         }
 
         // Interfaces
@@ -147,6 +154,9 @@ public class Main {
         // test 4 q13
 
         // Locales + resource bundles for different langs
+        if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("locale"))) {
+            LocaleLab localeLab = new LocaleLab();
+        }
 
         // jdbc with own module + autocommit (on con or stmt?)
 
