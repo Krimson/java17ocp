@@ -29,6 +29,9 @@ public class CastingLab {
         a = (B) new C(); // Casting to B redundant
         a.output(); // This is class C
 
+        System.out.println("((B) a).output();");
+        ((B) a).output(); // This is class C
+
         System.out.println("A super object can be assigned to the state of a child object, but not vice-versa.");
         System.out.println("B b = new B();");
         System.out.println("A a2 = b;");
@@ -36,8 +39,6 @@ public class CastingLab {
         A a2 = b;
         System.out.println("a2.output();");
         a2.output();
-
-
 
         System.out.println("B b = new A(), NOK... Compilation error.");
         System.out.println("B b = (B) new A(): will result in ClassCastException. B is not a subclass of A");

@@ -48,4 +48,14 @@ public class EnumOrderLab {
         System.out.println();
     }
 
+    private void enumInMethod() {
+        System.out.println("--- Enums - Enums In Methods");
+        System.out.println("Enums can be created inside methods, without access modifiers: ");
+
+        System.out.println("enum country {Sweden, Norway, Denmark} ");
+        System.out.println("country c = country.Sweden; ");
+        enum country {Sweden, Norway, Denmark}
+        country c = country.Sweden;
+    }
+
 }

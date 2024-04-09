@@ -1,5 +1,6 @@
 package lab.bjes;
 
+import lab.bjes.abstractkeyword.AbstractLab;
 import lab.bjes.arrays.ArrayLab;
 import lab.bjes.arrays.MultidimensionalArrayLab;
 import lab.bjes.atomic.AtomicIntegerLab;
@@ -12,6 +13,7 @@ import lab.bjes.instance.InstanceOfLab;
 import lab.bjes.interfaces.DerivedClassAB;
 import lab.bjes.lambda.LambdaLab;
 import lab.bjes.locale.LocaleLab;
+import lab.bjes.loops.LoopLab;
 import lab.bjes.misc.Misc;
 import lab.bjes.optionals.OptionalLab;
 import lab.bjes.paths.PathLab;
@@ -31,6 +33,11 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         boolean runAll = args == null || args.length == 0;
+
+        // Abstraction
+        if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("abstract"))) {
+            AbstractLab abstractLab = new AbstractLab();
+        }
 
         // Streams
         // summarizing int  etc
@@ -97,7 +104,7 @@ public class Main {
 
         // Priority
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("prio"))) {
-
+             // to be added
         }
 
 
@@ -115,8 +122,10 @@ public class Main {
             VarargsLab varargsLab = new VarargsLab();
         }
 
-
-        // loops + do; while
+        // Loops
+        if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("loop"))) {
+            LoopLab loopLab = new LoopLab();
+        }
 
         // Records
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("record"))) {
@@ -124,7 +133,6 @@ public class Main {
         }
 
         // Strings
-        // + isBlank()
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("string"))) {
             StringLab stringLab = new StringLab();
         }
@@ -191,10 +199,14 @@ public class Main {
 
         // RandomAccessFile, test 4 q6
 
+        // super, test1 q37
+
         // Functional Interfaces
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("functional"))) {
             FiLab fiLab = new FiLab();
         }
+
+        // sql, test 2 q 41
 
         // Misc
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("misc"))) {

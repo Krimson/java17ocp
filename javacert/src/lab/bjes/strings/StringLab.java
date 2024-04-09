@@ -52,12 +52,12 @@ public class StringLab {
     private void isBlank() {
         System.out.println("--- Strings - isBlank() vs isEmpty()");
         System.out.println("isBlank returns true if Strings contains only whitespaces. isEmpty returns true if the String is empty. ");
-        System.out.println("\"\".isBlank(): " + "".isBlank());
-        System.out.println("\" \".isBlank(): " + " ".isBlank());
-        System.out.println("\"\\t\\n\".isBlank(): " + "\t\n".isBlank());
+        System.out.println("\"\".isBlank(): " + "".isBlank()); // true
+        System.out.println("\" \".isBlank(): " + " ".isBlank()); // true
+        System.out.println("\"\\t\\n\".isBlank(): " + "\t\n".isBlank()); // true
 
-        System.out.println("\"\".isEmpty(): " + "".isEmpty());
-        System.out.println("\" \".isEmpty(): " + " ".isEmpty());
-        System.out.println("\"\\t\\n\".isEmpty(): " + "\t\n".isEmpty());
+        System.out.println("\"\".isEmpty(): " + "".isEmpty()); // true
+        System.out.println("\" \".isEmpty(): " + " ".isEmpty()); // false
+        System.out.println("\"\\t\\n\".isEmpty(): " + "\t\n".isEmpty()); // false
     }
 }
