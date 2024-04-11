@@ -13,6 +13,7 @@ public class Misc {
         cohesion();
         moduleInfo();
         javaCommand();
+        javaThreads();
     }
 
     private void platformIndependent() {
@@ -68,8 +69,9 @@ public class Misc {
 
         System.out.println("mp: https://www.baeldung.com/java-classpath-vs-modulepath");
         System.out.println("mp: The modulepath is a collection of directories, JAR files and modules that contains compiled module files (.mod files) and their associated deps");
-        System.out.println();
-        System.out.println();
+        System.out.println("mp: In order to run a module, both a --module-path and a --module must be provided");
+        System.out.println("Example if we have mod.a and mod.b, mod.a has the class we want to run and is dependant on mod.b. We can run this using the command: ");
+        System.out.println("java --module-path a.jar;b.jar --module mod.a/com.bjes.mod.a.StartApplication");
         System.out.println();
     }
 

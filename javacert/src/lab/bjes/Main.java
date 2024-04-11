@@ -5,6 +5,7 @@ import lab.bjes.arrays.ArrayLab;
 import lab.bjes.arrays.MultidimensionalArrayLab;
 import lab.bjes.atomic.AtomicIntegerLab;
 import lab.bjes.collectors.CollectorsLab;
+import lab.bjes.deques.DequeLab;
 import lab.bjes.enums.EnumOrderLab;
 import lab.bjes.exceptions.ExceptionLab;
 import lab.bjes.floats.FloatLab;
@@ -56,6 +57,8 @@ public class Main {
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("array"))) {
             ArrayLab arrayLab = new ArrayLab();
         }
+
+        // Lists test 3 q 14
 
         // Paths
         // + is valid, test 4 q 15
@@ -169,10 +172,18 @@ public class Main {
         // jdbc with own module + autocommit (on con or stmt?)
 
         // autocloseable + trywithresources + everything might not be thrown if theres no proper catch??
+        // test 3 q13
 
-        // functional interface + supplier/function
+        // Queue
+        if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("queue"))) {
 
-        // ArrayDequeue remove() <-- important (can act as both queue and stack)
+        }
+
+        // Deque
+        if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("deque"))) { // ArrayDeque remove() <-- important (can act as both queue and stack)
+            DequeLab dequeLab = new DequeLab();
+        }
+
 
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("serialize"))) {
             try {
@@ -201,6 +212,7 @@ public class Main {
 
         // super, test1 q37
 
+        // functional interface + supplier/function
         // Functional Interfaces
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("functional"))) {
             FiLab fiLab = new FiLab();
@@ -209,6 +221,7 @@ public class Main {
         // sql, test 2 q 41
 
         // Misc
+        // module-path, test3 q17
         if(runAll || Arrays.stream(args).anyMatch(x -> x.equals("misc"))) {
             Misc misc = new Misc();
         }

@@ -68,6 +68,30 @@ public class StreamLab {
         System.out.println("--- Stream - Intstream sums");
         System.out.println("Sums: Checking value of IntStream.of(3,7,10).sum(): " + IntStream.of(3,7,10).sum());
         System.out.println("Sums: Checking value of Stream.of(2,5,6).mapToInt(x -> x*2).sum(): " + Stream.of(2,5,6).mapToInt(x -> x*2).sum());
+
+
+        System.out.println("--- Stream - IntStream avarage");
+        System.out.println("IntStream:s avarage is a terminal operation that returns an OptionalDouble");
+
+        System.out.println("OptionalDouble od = IntStream.of(1, 2, 4).filter(x -> x > 5).average();");
+        OptionalDouble od = IntStream.of(1, 2, 4).filter(x -> x > 5).average();
+        System.out.println("od.ifPresentOrElse(x -> System.out.println(\"Value avarage: \" + x), () -> System.out.println(\"OptionalDouble was empty\"));");
+        od.ifPresentOrElse(x -> System.out.println("Value avarage: " + x), () -> System.out.println("OptionalDouble was empty"));
+
+        OptionalDouble od2 = IntStream.of(6, 6, 9).filter(x -> x > 5).average();
+        System.out.println("OptionalDouble od2 = IntStream.of(6, 6, 9).filter(x -> x > 5).average();");
+        System.out.println("od.ifPresentOrElse(x -> System.out.println(x), () -> System.out.println(\"OptionalDouble was empty\")");
+        od2.ifPresentOrElse(x -> System.out.println("Value avarage: " + x), () -> System.out.println("OptionalDouble was empty"));
+
+
+        System.out.println("--- Stream - IntStream OptionalInt returns");
+        System.out.println("Similar to how we got an OptionalDouble with .avarage(), we can get an OptionalInt with the terminal operations .min(), .max(), .findAny()");
+        System.out.println("Example with max(): ");
+        System.out.println("OptionalInt od3 = IntStream.of(1, 10, 9).filter(x -> x > 5).max();");
+        OptionalInt od3 = IntStream.of(1, 10, 9).filter(x -> x > 5).max();
+
+        System.out.println("od3.ifPresent(x -> System.out.println(\"Max value was: \" + x));");
+        od3.ifPresent(x -> System.out.println("Max value was: " + x));
     }
 
     private void streamReduce() {

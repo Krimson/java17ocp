@@ -1,10 +1,20 @@
 package lab.bjes.polymorphism;
 
-public interface PolyAnimal {
-    default int legCount() {return 2;}
-    String animalSound();
+public class PolyAnimal {
 
-    boolean hasFur();
+    int legCount() {
+        return 2;
+    }
+    String animalSound() {
+        return "Squeek";
+    };
 
-    String reaction(String action);
+
+    String reaction(String action) {
+        if(action != null && action.equals("pet")) {
+            return "happy";
+        }
+        return "no reaction";
+    }
+
 }
